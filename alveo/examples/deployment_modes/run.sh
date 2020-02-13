@@ -42,7 +42,7 @@ DEVICEID=0
 NUMPREPPROC=4
 COMPILEROPT="autoAllOpt"
 # Parse Options
-OPTS=`getopt -o t:m:d:s:a:n:ns:i:c:y:gvxh --long test:,model:,directory:,numdevices:,numstreams:,deviceid:,batchsize:,compilerOpt:,numprepproc,checkaccuracy,verbose,perpetual,help -n "$0" -- "$@"`
+OPTS=`getopt -o t:m:d:s:a:n:ns:i:c:y:gvxh --long test:,model:,directory:,numdevices:,numstreams:,deviceid:,batchsize:,compilerOpt:,numprepproc,checkaccuracy,verbose,perpetual,customnet,customquant,customwts,help -n "$0" -- "$@"`
 
 if [ $? != 0 ] ; then echo "Failed parsing options." >&2 ; usage; exit 1 ; fi
 

@@ -171,6 +171,7 @@ class UserPostProcess():
     self.finish()
 
   def finish(self):
+    print( "%g images" % ( self.numProcessed ))
     print( "%g images/s" % ( float(self.numProcessed) / (timeit.default_timer() - self.startTime )  ))
     if self.args['golden'] and self.numProcessed:
       print("\nAverage accuracy (n=%d) Top-1: %.1f%%, Top-5: %.1f%%\n" \
@@ -270,7 +271,8 @@ def fpga_process(args, num_img,  compJson, shared_trans_arrs,shared_output_arrs)
     qWait.put((None, None, None))
     t.join()
     elapsedTime = ( time.time() - startTime )
-    print( "FPGA_process: ", float(numProcessed)/elapsedTime, "img/s")
+    print( "FPGA_process: ", float(numProcessed), "batch")
+    print( "FPGA_process: ", float(numProcessed)/elapsedTime, "batch/s")
 
 # Current version does copies...
 # Assumes all types are np.float32/ctypes.c_float

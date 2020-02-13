@@ -66,6 +66,9 @@ def main():
     jid = runner.execute_async(fpgaBlobs[0], fpgaBlobs[1])
     runner.wait(jid)
 
+    print(fpgaBlobs[1][0].shape)
+    print(fcOutput.shape)
+    print(xdnnCPUOp._weight.shape)
     xdnnCPUOp.computeFC(fpgaBlobs[1][0], fcOutput)
     softmaxOut = xdnnCPUOp.computeSoftmax(fcOutput)
     if args['golden']:

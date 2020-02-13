@@ -63,7 +63,7 @@ To run any of the three examples, use the provided bash run.sh script.
     ```
 6. Streaming Image Classification FPGA-only mode with live pipeline performance report:
     ```sh
-    $ ./run.sh -t streaming_classify_fpgaonly -c throughput -d $HOME/CK-TOOLS/dataset-imagenet-ilsvrc2012-val-min -x -v | python $VAI_ALVEO_ROOT/vai/dpuv1/rt/scripts/speedometer.py
+    $ ./run.sh -t streaming_classify_fpgaonly -c throughput -d $HOME/CK-TOOLS/dataset-imagenet-ilsvrc2012-val-min -x -v | python $VAI_PYTHON_DIR/vai/dpuv1/rt/scripts/speedometer.py
     ```
    To exit the streaming report view, press CTRL-Z and type kill -9 %%.
 7. Multinet Image Classification on alveo

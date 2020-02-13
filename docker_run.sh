@@ -66,12 +66,14 @@ else
     $docker_devices \
     -v /opt/xilinx/dsa:/opt/xilinx/dsa \
     -v /opt/xilinx/overlaybins:/opt/xilinx/overlaybins \
+    -v $HERE/home:$HOME \
     -e USER=$user -e UID=$uid -e GID=$gid \
     -v $HERE:/workspace \
     -w /workspace \
     -it \
     --rm \
     --network=host \
+    --shm-size=4g \
     $IMAGE_NAME \
     bash
 fi
