@@ -53,13 +53,13 @@ The following table includes comprehensive information about each model, includi
 | 31   | Object Detection         | yolov2\_voc\_pruned\_0\.77     | dk\_yolov2\_voc\_448\_448\_0\.77\_7\.82G            | darknet    | darknet\-19    | 448\*448   | 7\.82G        | voc07\+12\_trainval                     | voc07\_test             | 75\.76%\(MaxIntegral\)          | 74\.6%\(MaxIntegral\)         |
 | 32   | Image Classifiction      | Inception\_resnet\_v2          | tf\_inceptionresnetv2\_imagenet\_299\_299\_26\.35G  | tensorflow | inception      | 299\*299   | 26\.35G       | ImageNet Train                          | ImageNet Validataion    | 80\.37%                        | 79\.91%                       |
 | 33   | Image Classifiction      | Inception\_v1                  | tf\_inceptionv1\_imagenet\_224\_224\_3G             | tensorflow | inception      | 224\*224   | 3G            | ImageNet Train                          | ImageNet Validataion    | 69\.76%                        | 67\.94%                       |
-| 34   | Image Classifiction      | Inception\_v3                  | tf\_inceptionv3\_imagenet\_299\_299\_11\.45G        | tensorflow | inception      | 299\*299   | 11\.45G       | ImageNet Train                          | ImageNet Validataion    | 69\.76%                        | 67\.94%                       |
-| 35   | Image Classifiction      | Inception\_v4                  | tf\_inceptionv4\_imagenet\_299\_299\_24\.55G        | tensorflow | inception      | 299\*299   | 24\.55G       | ImageNet Train                          | ImageNet Validataion    | 69\.76%                        | 67\.94%                       |
-| 36   | Image Classifiction      | Mobilenet\_v1                  | tf\_mobilenetv1\_0\.25\_imagenet\_128\_128\_27\.15M | tensorflow | mobilenet      | 299\*299   | 24\.55G       | ImageNet Train                          | ImageNet Validataion    | 41\.44%                        | 34\.64%                       |
-| 37   | Image Classifiction      | Mobilenet\_v1                  | tf\_mobilenetv1\_0\.5\_imagenet\_160\_160\_150\.07M | tensorflow | mobilenet      | 299\*299   | 24\.55G       | ImageNet Train                          | ImageNet Validataion    | 59\.03%                        | 51\.95%                       |
-| 38   | Image Classifiction      | Mobilenet\_v1                  | tf\_mobilenetv1\_1\.0\_imagenet\_224\_224\_1\.14G   | tensorflow | mobilenet      | 299\*299   | 24\.55G       | ImageNet Train                          | ImageNet Validataion    | 71\.02%                        | 66\.10%                       |
-| 39   | Image Classifiction      | Mobilenet\_v2                  | tf\_mobilenetv2\_1\.0\_imagenet\_224\_224\_0\.59G   | tensorflow | mobilenet      | 299\*299   | 24\.55G       | ImageNet Train                          | ImageNet Validataion    | 70\.13%                        | 67\.67%                       |
-| 40   | Image Classifiction      | Mobilenet\_v2                  | tf\_mobilenetv2\_1\.4\_imagenet\_224\_224\_1\.16G   | tensorflow | mobilenet      | 299\*299   | 24\.55G       | ImageNet Train                          | ImageNet Validataion    | 74\.11%                        | 71\.94%                       |
+| 34   | Image Classifiction      | Inception\_v3                  | tf\_inceptionv3\_imagenet\_299\_299\_11\.45G        | tensorflow | inception      | 299\*299   | 11\.45G       | ImageNet Train                          | ImageNet Validataion    | 77\.98%                        | 76\.07%                       |
+| 35   | Image Classifiction      | Inception\_v4                  | tf\_inceptionv4\_imagenet\_299\_299\_24\.55G        | tensorflow | inception      | 299\*299   | 24\.55G       | ImageNet Train                          | ImageNet Validataion    | 80\.18%                        | 79\.32%                       |
+| 36   | Image Classifiction      | Mobilenet\_v1                  | tf\_mobilenetv1\_0\.25\_imagenet\_128\_128\_27\.15M | tensorflow | mobilenet      | 128\*128   | 27\.15M       | ImageNet Train                          | ImageNet Validataion    | 41\.44%                        | 34\.64%                       |
+| 37   | Image Classifiction      | Mobilenet\_v1                  | tf\_mobilenetv1\_0\.5\_imagenet\_160\_160\_150\.07M | tensorflow | mobilenet      | 160\*160   | 150\.07M       | ImageNet Train                          | ImageNet Validataion    | 59\.03%                        | 51\.95%                       |
+| 38   | Image Classifiction      | Mobilenet\_v1                  | tf\_mobilenetv1\_1\.0\_imagenet\_224\_224\_1\.14G   | tensorflow | mobilenet      | 224\*224   | 1\.14G       | ImageNet Train                          | ImageNet Validataion    | 71\.02%                        | 66\.10%                       |
+| 39   | Image Classifiction      | Mobilenet\_v2                  | tf\_mobilenetv2\_1\.0\_imagenet\_224\_224\_0\.59G   | tensorflow | mobilenet      | 224\*224   | 0\.59G       | ImageNet Train                          | ImageNet Validataion    | 70\.13%                        | 67\.67%                       |
+| 40   | Image Classifiction      | Mobilenet\_v2                  | tf\_mobilenetv2\_1\.4\_imagenet\_224\_224\_1\.16G   | tensorflow | mobilenet      | 224\*224   | 1\.16G       | ImageNet Train                          | ImageNet Validataion    | 74\.11%                        | 71\.94%                       |
 | 41   | Image Classifiction      | resnet\_v1\_50                 | tf\_resnetv1\_50\_imagenet\_224\_224\_6\.97G        | tensorflow | resnetv1       | 224\*224   | 6\.97G        | ImageNet Train                          | ImageNet Validataion    | 75\.20%                        | 74\.23%                       |
 | 42   | Image Classifiction      | resnet\_v1\_101                | tf\_resnetv1\_101\_imagenet\_224\_224\_14\.4G       | tensorflow | resnetv1       | 224\*224   | 14\.4G        | ImageNet Train                          | ImageNet Validataion    | 76\.40%                        | 74\.17%                       |
 | 43   | Image Classifiction      | resnet\_v1\_152                | tf\_resnetv1\_152\_imagenet\_224\_224\_21\.83G      | tensorflow | resnetv1       | 224\*224   | 21\.83G       | ImageNet Train                          | ImageNet Validataion    | 76\.81%                        | 74\.69%                       |
@@ -225,7 +225,7 @@ For a Tensorflow model, you should see the following directory structure:
         └── frozen.pb                   # Float-point frozen model, the input to the `vai_q_tensorflow`.
 
 
-**Note:** For more information on `vai_q_caffe` and `vai_q_tensorflow`, see the [Vitis AI User Guide](https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug1414-vitis-ai.pdf).
+**Note:** For more information on `vai_q_caffe` and `vai_q_tensorflow`, see the [Vitis AI User Guide](http://www.xilinx.com/support/documentation/sw_manuals/vitis_ai/1_0/ug1414-vitis-ai.pdf).
 
 
 ## Model Performance
@@ -235,7 +235,7 @@ For more information about DPU, see [DPU IP Product Guide](https://www.xilinx.co
 
 
 **Note:** The model performance number listed in the following sections is generated with Vitis AI v1.0 and Vitis AI Lirary v1.0. For each board, a different DPU configuration is used. Vitis AI and Vitis AI Library can be downloaded for free from [Vitis AI Github](https://github.com/Xilinx/Vitis-AI) and [Vitis AI Library Github](https://github.com/Xilinx/Vitis-AI/tree/master/Vitis-AI-Library).
-We will continue to improve the performance with Vitis AI. The performance number reported here is subject to change in near future.
+We will continue to improve the performance with Vitis AI. The performance number reported here is subject to change in the near future.
 
 ### Performance on ZCU102 (0432055-04)  
 This version of ZCU102 is out of stock. The performance number shown below was measured with the previous AI SDK v2.0.4.
@@ -420,7 +420,7 @@ The following table lists the performance number including end-to-end throughput
 
 ### Performance on Ultra96  
 The performance number shown below was measured with the previous AI SDK v2.0.4 on Ultra96 v1.
-The Vitis platform of Ultra96 v2 has not been released yet. So the performance number on it in not reported in this Model Zoo release.  
+The Vitis platform of Ultra96 v2 has not been released yet. So the performance numbers are therefore not reported for this Model Zoo release.  
 
 <details>
  <summary><b>Click here to view details</b></summary>

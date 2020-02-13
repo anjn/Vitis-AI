@@ -80,7 +80,7 @@ The top-level directory structure shows the the major design components. The TRD
 ###### **Note:** The xdpu/dpu_ip and xdpu/prj/Vitis(inclduing the kernel_xml,dpu_config.vh,scripts) are needed, if the user add the DPU and softmax in own project.
 
 ```
-xdpu       
+DPU_TRD       
 ├── dpu_ip                              # rtl kernel
 ├── apps       
 │   └── Vitis
@@ -138,14 +138,14 @@ To run the pre-built SD card image , follow the instructions on [5.2.3](#523-run
 The following tutorials assume that the $TRD_HOME environment variable is set as given below.
 
 ```
-%export TRD_HOME =<vitis trd path>/XDPU
+%export TRD_HOME =<Vitis AI path>/DPU_TRD
 ```
 
 ###### **Note:** It is recommended to follow the build steps in sequence.
 
 #### 5.2.1 Building the Hardware Design
 
-We need install the Vitis Core De
+We need install the Vitis Core Development Environment.
 
 We prepare the zcu102_base platform in the vitis TRD project. The platform include all the libs that needed.
 
@@ -171,7 +171,7 @@ Build the hardware design.
 % make KERNEL=DPU_SM DEVICE=zcu102
 ```
 
-Generate SD card files are in **$TRD_HOME/prj/Vitis/binary_container_1/sd_card**.
+Generated SD card files are in **$TRD_HOME/prj/Vitis/binary_container_1/sd_card**.
 
  
 #### 5.2.2 Resnet50 Example 
@@ -197,7 +197,7 @@ After the linux boot, Run:
 ```
 
 
-###### **Note:** If you want to run other network. Please refer to the [Vitis AI Github](https://github.com/Xilinx/Vitis-AI) and [Vitis AI User Guide](https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug1414-vitis-ai.pdf).
+###### **Note:** If you want to run other network. Please refer to the [Vitis AI Github](https://github.com/Xilinx/Vitis-AI) and [Vitis AI User Guide](http://www.xilinx.com/support/documentation/sw_manuals/vitis_ai/1_0/ug1414-vitis-ai.pdf).
 
 
 ### 5.3 Change the Configuration
@@ -226,7 +226,7 @@ The project will integrate 2 DPU. The user can delete this property, Then the pr
 
 The default setting is B4096 for zcu102. Read the dpu_conf.vh file to get the details of DPU 
 
-Modify the $TRD_HOME/rtl_kernel/dpu/hdl/dpu_conf.vh file to modify the configuration. 
+Modify the $TRD_HOME/prj/Vitis/dpu_conf.vh file to modify the configuration. 
 
 The TRD supports to modify the following parameters.
 
@@ -413,7 +413,7 @@ steps:
 
 1.Modify the Makefile file
 ```
---config ${DIR_PRJ}/config_file/prj_config_102_3dpu
+--config ${TRD_HOME}/prj/Vitis//config_file/prj_config_102_3dpu
 ```
 2.
 ```
@@ -427,7 +427,7 @@ steps:
 
 1.Modify the Makefile file
 ```
---config ${DIR_PRJ}/config_file/prj_config_104_2dpu
+--config ${TRD_HOME}/prj/Vitis//config_file/prj_config_104_2dpu
 ```
 2.Enable the URAM and modify the RAM USAGE
 

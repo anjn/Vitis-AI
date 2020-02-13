@@ -1,3 +1,16 @@
+# Copyright 2019 Xilinx Inc.
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 import json
 import pytest
 import requests
@@ -34,7 +47,7 @@ def test_sface(request):
     client_id = response['message']
 
     post_data = {
-        'url': 'https://www.youtube.com/watch?v=f5NJQiY9AuY',
+        'url': 'https://www.youtube.com/watch?v=mH9pDONwq3I',
         'dtype': 'uint8',
         'callback_id': client_id
     }
@@ -47,6 +60,7 @@ def test_sface(request):
     # TODO should this response be checked?
 
     # collect some number of frames
+    foundBoxes = False
     for i in range(20):
         for j in range(10):
             response = json.loads(ws.recv())
@@ -60,12 +74,15 @@ def test_sface(request):
             assert 'boxes' in response
             assert response['callback_id'] == client_id
 
-            # in this video, there should be a face (i.e. boxes) in all frames
-            assert response['boxes']
+            # in this video, there should be a face (i.e. boxes) in some frames
+            if response['boxes']:
+              foundBoxes = True
 
         # issue keepalive request every so often
         r = requests.post('%s/serve/sface' % server_addr, post_data)
         assert r.status_code == 200, r.text
+
+    assert foundBoxes
 
     ws.close()
     service.stop()

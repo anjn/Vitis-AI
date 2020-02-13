@@ -1,3 +1,18 @@
+# Copyright 2019 Xilinx Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+
 import os,subprocess
 import shutil
 
@@ -22,12 +37,20 @@ models = [
   "https://www.xilinx.com/bin/public/openDownload?filename=models.container.caffe.bvlc_googlenet_2019-05-02_12_32.zip",
    "https://www.xilinx.com/bin/public/openDownload?filename=models.container.caffe.inception_v2_2019-05-02_12_32.zip",
    "https://www.xilinx.com/bin/public/openDownload?filename=models.container.caffe.inception_v3_2019-05-02_12_32.zip",
-   "https://www.xilinx.com/bin/public/openDownload?filename=models.container.caffe.inception_v4_2019-05-02_12_32.zip",
+   "https://www.xilinx.com/bin/public/openDownload?filename=models.container.caffe.inception_v4_2019-12-2_10-22.zip",
    "https://www.xilinx.com/bin/public/openDownload?filename=models.container.caffe.resnet50_v1_2019-05-02_12_32.zip",
    "https://www.xilinx.com/bin/public/openDownload?filename=models.container.caffe.resnet50_v2_2019-05-02_12_32.zip",
    "https://www.xilinx.com/bin/public/openDownload?filename=models.container.caffe.squeezenet_2019-05-02_12_32.zip",
    "https://www.xilinx.com/bin/public/openDownload?filename=models.container.caffe.vgg16_2019-05-02_12_32.zip",
    "https://www.xilinx.com/bin/public/openDownload?filename=models.container.caffe.inception_v2_ssd_2019-05-06_0765.zip",
+   "https://www.xilinx.com/bin/public/openDownload?filename=FPN_CityScapes.zip",
+   "https://www.xilinx.com/bin/public/openDownload?filename=maps_BtoA.zip",
+   "https://www.xilinx.com/bin/public/openDownload?filename=maps_AtoB.zip",
+   "https://www.xilinx.com/bin/public/openDownload?filename=cityscapes_BtoA.zip",
+   "https://www.xilinx.com/bin/public/openDownload?filename=cityscapes_AtoB.zip",
+   "https://www.xilinx.com/bin/public/openDownload?filename=facades_BtoA.zip",
+   "https://www.xilinx.com/bin/public/openDownload?filename=bw2color.zip",
+   
 ]
 
 # Where will we work

@@ -48,27 +48,15 @@ The vitis-ai-docker-tools contains the Vitis AI quantizer, AI compiler and examp
 The vitis-ai-docker-runtime is the runtime docker image for DPU-v2 development, which holds Vitis AI installation package 
 for Xilinx ZCU102 and ZCU104 evaluation boards, samples, and Arm GCC cross-compilation toolchain.
 
- - Download Docker Containers - Please use CPU tools container if no GPU available on your machine  
+ - Clone the Vitis-AI repository to obtain the examples, reference code, and scripts. 
     ```
     git clone https://github.com/Xilinx/Vitis-AI  
     
     cd Vitis-AI
-    ```
-    
-    #### CPU tools container:
-    ```
-    wget -O vitis-ai-tools-1.0.0-cpu.tar.gz 'https://www.xilinx.com/bin/public/openDownload?filename=vitis-ai-tools-1.0.0-cpu.tar.gz'
-    ```
-    #### GPU tools container:
-    ```
-    wget -O vitis-ai-tools-1.0.0-gpu.tar.gz 'https://www.xilinx.com/bin/public/openDownload?filename=vitis-ai-tools-1.0.0-gpu.tar.gz'
-    ```
-    #### Runtime container:
-    ```
-    wget -O vitis-ai-runtime-1.0.0.tar.gz https://www.xilinx.com/bin/public/openDownload?filename=vitis-ai-runtime-1.0.0.tar.gz
-    ```
-    
- - [Install Docker](doc/install_docker/README.md) - if Docker not installed on your machine yet  
+    ```  
+ - [Install Docker](doc/install_docker/README.md) - if Docker not installed on your machine yet
+ 
+ - [Ensure your linux user is in the group docker](https://docs.docker.com/install/linux/linux-postinstall/)
  
  - [Load&Run Docker Container](doc/install_docker/load_run_docker.md)  
  
@@ -94,14 +82,14 @@ to help you get familiar with the unfied programming APIs.
 | 6  | adas\_detection       | YOLO\-v3            | Caffe      | ADAS detection with Vitis AI unified C\+\+ APIs\.                         |
 | 7  | segmentation          | FPN                 | Caffe      | Semantic segmentation with Vitis AI unified C\+\+ APIs\.                  |
 
-For more information, please refer to [Vitis AI User Guide](https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug1414-vitis-ai.pdf)
+For more information, please refer to [Vitis AI User Guide](http://www.xilinx.com/support/documentation/sw_manuals/vitis_ai/1_0/ug1414-vitis-ai.pdf)
 
  
 ## References 
 - [Vitis AI Overview](https://www.xilinx.com/products/design-tools/vitis/vitis-ai.html)
-- [Vitis AI User Guide](https://www.xilinx.com/cgi-bin/docs/ndoc?t=user_guides;d=ug1414-vitis-ai.pdf)
-- [Vitis AI Model Zoo with performance&accuracy data](https://github.com/Xilinx/Vitis-AI/tree/master/AI-Model-Zoo)
-- [Tutotrials & Articles](https://developer.xilinx.com/en/get-started/ai.html)
+- [Vitis AI User Guide](  http://www.xilinx.com/support/documentation/sw_manuals/vitis_ai/1_0/ug1414-vitis-ai.pdf)
+- [Vitis AI Model Zoo with Performance & Accuracy Data](https://github.com/Xilinx/Vitis-AI/tree/master/AI-Model-Zoo)
+- [Tutorials & Articles](https://developer.xilinx.com/en/get-started/ai.html)
 - [Performance Whitepaper][]
 
 ## [System Requirements](doc/system_requirements.md)
